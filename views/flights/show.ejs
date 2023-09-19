@@ -1,10 +1,9 @@
 <%- include('../partials/header') %>
 
-<h2>Flight List</h2>
+<h2>Flight Details</h2>
 <table>
   <thead>
     <tr>
-      <th></th>
       <th>Airline</th>
       <th>Airport</th>
       <th>flightNo</th>
@@ -12,16 +11,23 @@
     </tr>
   </thead>
   <tbody>
-    <% flights.forEach((flight) => { %>
       <tr>
-        <td><a href="flights/<%= flight._id %>/show">details</a></td>
         <td><%= flight.airline %></td>
         <td><%= flight.airport %></td>
         <td><%= flight.flightNo %></td>
         <td><%= flight.departs %></td>
       </tr>
-    <%  }); %>
   </tbody>
 </table>
+<h3>Destinations:</h3>
+<ul>
+    <% if (flight.destinations) { %>
+        <% flight.destinations.forEach( (destination) => { %>
+            <li><%= destination %> </li>
+        <% }) %>
+    <% } %>
+</ul>
+
+<a href="/flights/<%= flight._id %>/destination/new">Add a Destination</a>
 
 <%- include('../partials/footer') %>

@@ -8,5 +8,6 @@ router.get('/', flightsController.index);
 router.get('/new', flightsController.new);
 // route to create new flight in db
 router.post('/', flightsController.create);
+router.get('/:id/show', flightsController.show);
 
 module.exports = router;
