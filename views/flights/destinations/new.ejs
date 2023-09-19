@@ -1,0 +1,22 @@
+<%- include('../../partials/header') %>
+
+<h2>Enter a New Destination</h2>
+<h3><%= flightId %></h3>
+<form action="/<%= flightId %>/destinations/create" method="POST">
+  <label>Airport
+    <select name="airport">
+      <option value="AUS">AUS</option>
+      <option value="DFW">DFW</option>
+      <option value="LAX">LAX</option>
+      <option value="SAN">SAN</option>
+      <option value="DEN">DEN</option>
+    </select>
+  </label><br>
+  <label>Arrival Date
+    <input type="text" name="departs">
+  </label><br>
+
+  <button type="submit">Add Destination</button>
+</form>
+
+<%- include('../../partials/footer') %>
